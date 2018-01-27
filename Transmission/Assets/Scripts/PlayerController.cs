@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
 	public bool canJump;
 	Rigidbody2D rb;
 	SpriteRenderer sr;
+	public RoomManager rm;
 
 	// Use this for initialization
 	void Start () 
@@ -55,6 +56,15 @@ public class PlayerController : MonoBehaviour {
 		if (coll.gameObject.tag == "Floor") 
 		{
 			canJump = true;
+		}
+	}
+
+	void OnTriggerEnter2D (Collider2D coll)
+	{
+		if (coll.gameObject.tag == "Coin") 
+		{
+			rm.scorePoints();
+			Destroy (coll.gameObject);
 		}
 	}
 }
