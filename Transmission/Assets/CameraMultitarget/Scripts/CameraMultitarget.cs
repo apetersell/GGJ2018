@@ -7,7 +7,7 @@ public class CameraMultitarget : MonoBehaviour {
     //Things added for Global Game Jam marked with a *
 
     //*
-    public bool isZooming;
+
 
 	/// <summary>
 	/// The target objects.
@@ -342,7 +342,5 @@ public class CameraMultitarget : MonoBehaviour {
             yield return null;
         }
         while (currentTime <= duration);
-
-        isZooming = false;
     }
 }
