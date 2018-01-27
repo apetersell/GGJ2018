@@ -960,7 +960,7 @@ MonoBehaviour:
   - {x: 0.11, y: -3.34}
   - {x: 0.11, y: 0.53}
   roomScore: 0
-  roomScoreMax: 1
+  roomScoreMax: 5
   timeUnitlCoin: 0
   currentCoinTimer: 0
   maxCoinTime: 5

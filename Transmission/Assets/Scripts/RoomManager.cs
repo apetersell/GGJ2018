@@ -23,6 +23,7 @@ public class RoomManager : MonoBehaviour {
 	float currentScale;
 	public Color completedColor;
     public CameraMultiTargetObjective camTarg;
+	CameraMultitarget cam; 
     //public GameObject camTarget;
     //SmashCamScript sc;
 
@@ -36,6 +37,11 @@ public class RoomManager : MonoBehaviour {
 		{
 			GeneralManager.roomPositions.Add (transform.position);
             //sc.Players.Add((camTarget));
+			if (active) 
+			{
+				Camera.main.GetComponent<CameraMultitarget>().startZoom = Camera.main.GetComponent<CameraMultitarget>().endZoom;
+				Camera.main.GetComponent<CameraMultitarget>().StartCoroutine(Camera.main.GetComponent<CameraMultitarget>().ZoomOut()); 
+			}
 		}
 	}
 	

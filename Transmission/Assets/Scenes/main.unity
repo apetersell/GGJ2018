@@ -340,6 +340,10 @@ Prefab:
       propertyPath: first
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1313079498045828, guid: 0d9223483ca32400b83eb3acbc014bd6, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d9223483ca32400b83eb3acbc014bd6, type: 2}
   m_IsPrefabParent: 0
@@ -385,6 +389,10 @@ Prefab:
     - target: {fileID: 1313079498045828, guid: 0d9223483ca32400b83eb3acbc014bd6, type: 2}
       propertyPath: m_Name
       value: Room (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313079498045828, guid: 0d9223483ca32400b83eb3acbc014bd6, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d9223483ca32400b83eb3acbc014bd6, type: 2}
@@ -497,7 +505,7 @@ Prefab:
         type: 2}
       propertyPath: connectedRooms.Array.data[0]
       value: 
-      objectReference: {fileID: 572248356}
+      objectReference: {fileID: 695822645}
     - target: {fileID: 114412818991764972, guid: 0d9223483ca32400b83eb3acbc014bd6,
         type: 2}
       propertyPath: connectedRooms.Array.data[1]
@@ -507,12 +515,12 @@ Prefab:
         type: 2}
       propertyPath: connectedRooms.Array.data[2]
       value: 
-      objectReference: {fileID: 1071382191}
+      objectReference: {fileID: 572248356}
     - target: {fileID: 114412818991764972, guid: 0d9223483ca32400b83eb3acbc014bd6,
         type: 2}
       propertyPath: connectedRooms.Array.data[3]
       value: 
-      objectReference: {fileID: 695822645}
+      objectReference: {fileID: 1071382191}
     - target: {fileID: 4174386737476016, guid: 0d9223483ca32400b83eb3acbc014bd6, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.27
