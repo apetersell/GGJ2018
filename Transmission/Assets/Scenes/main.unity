@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: 1329393257}
   - component: {fileID: 1329393256}
   - component: {fileID: 1329393255}
+  - component: {fileID: 1329393259}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -235,7 +236,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 16.636473
+  orthographic size: 17.16
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -264,6 +265,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1329393259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1329393254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5671e18b5f53f6d4995291804d9cff98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObjects: []
+  useLateralAlignedView: 0
+  orbitRotation: {x: 0, y: 0, z: 0}
+  focusOffset: {x: 0, y: 0, z: 0}
+  useScreenSpace: 0
+  minDistanceToTarget: 10
+  maxDistanceToTarget: 100
+  screenSafeArea: -21
+  positionInterpolationSpeed: 5
+  targetInterpolationSpeed: 2
+  orthographicSafeAreaMulti: 4
+  additionalZRotation: 0
+  useConstantFocusSpeed: 1
+  focusSpeed: 0.1
+  camPosition: {x: 0, y: 0, z: 0}
+  keepCameraLookAt: 0
 --- !u!1001 &1380304997
 Prefab:
   m_ObjectHideFlags: 0
@@ -404,11 +432,6 @@ Prefab:
       propertyPath: m_Name
       value: Room (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 114412818991764972, guid: 0d9223483ca32400b83eb3acbc014bd6,
-        type: 2}
-      propertyPath: first
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d9223483ca32400b83eb3acbc014bd6, type: 2}
   m_IsPrefabParent: 0
@@ -514,6 +537,11 @@ Prefab:
         type: 2}
       propertyPath: m_SortingOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114344343386994000, guid: 0d9223483ca32400b83eb3acbc014bd6,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d9223483ca32400b83eb3acbc014bd6, type: 2}

@@ -22,15 +22,20 @@ public class RoomManager : MonoBehaviour {
 	public float expandedScale;
 	float currentScale;
 	public Color completedColor;
+    public CameraMultiTargetObjective camTarg;
+    //public GameObject camTarget;
+    //SmashCamScript sc;
 
 
 	// Use this for initialization
 	void Start () 
 	{
-		timeUnitlCoin = Random.Range (minCoinTime, maxCoinTime);
+        //sc = GameObject.Find("Main Camera").GetComponent< SmashCamScript > ();
+        timeUnitlCoin = Random.Range (minCoinTime, maxCoinTime);
 		if (first) 
 		{
 			GeneralManager.roomPositions.Add (transform.position);
+            //sc.Players.Add((camTarget));
 		}
 	}
 	
@@ -96,6 +101,7 @@ public class RoomManager : MonoBehaviour {
 	public void activate ()
 	{
 		active = true;
+        camTarg.enabled = true;
 		for (int i = 0; i < 4; i++) 
 		{
 			if (i == 0) 
@@ -142,5 +148,7 @@ public class RoomManager : MonoBehaviour {
 		roomy.transform.position = pos;
 		connectedRooms.Add (roomy.GetComponent<RoomManager>());
 		GeneralManager.roomPositions.Add (pos);
+        Camera.main.GetComponent<CameraMultitarget>().startZoom = Camera.main.GetComponent<CameraMultitarget>().endZoom;
+        Camera.main.GetComponent<CameraMultitarget>().StartCoroutine(Camera.main.GetComponent<CameraMultitarget>().ZoomOut()); 
 	}
 }
