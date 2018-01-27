@@ -26,6 +26,10 @@ public class RoomManager : MonoBehaviour {
     public CameraMultiTargetObjective camTarg;
 	CameraMultitarget cam; 
 	bool badRoom;
+	public SpriteRenderer interior;
+	public SpriteRenderer exterior;
+	public Sprite badHouseInt;
+	public Sprite badHouseExt;
 
 
 	// Use this for initialization
@@ -39,7 +43,8 @@ public class RoomManager : MonoBehaviour {
 			GameObject spikeball = Instantiate (Resources.Load ("Prefabs/Spikeball")) as GameObject;
 			spikeball.transform.SetParent (transform);
 			spikeball.transform.localPosition = spikePositions [rando];
-			cover.GetComponent<SpriteRenderer> ().color = Color.red;
+			exterior.sprite = badHouseExt;
+			interior.sprite = badHouseInt;
 		}
 		if (first) 
 		{

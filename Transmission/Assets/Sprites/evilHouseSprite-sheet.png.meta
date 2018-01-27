@@ -1,4 +1,3 @@
-    mipMapMode: 0
 fileFormatVersion: 2
 guid: 4f206449c5760496685a1b307c93d323
 timeCreated: 1517086979
@@ -49,7 +48,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 1000
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
