@@ -5,6 +5,7 @@ using UnityEngine;
 public class RoomManager : MonoBehaviour {
 
 	public Vector2[] coinPositions;
+	public Vector2[] spikePositions;
 	public float roomScore;
 	public float roomScoreMax;
 	public float timeUnitlCoin;
@@ -24,8 +25,7 @@ public class RoomManager : MonoBehaviour {
 	public Color completedColor;
     public CameraMultiTargetObjective camTarg;
 	CameraMultitarget cam; 
-    //public GameObject camTarget;
-    //SmashCamScript sc;
+	bool badRoom;
 
 
 	// Use this for initialization
@@ -33,6 +33,14 @@ public class RoomManager : MonoBehaviour {
 	{
         //sc = GameObject.Find("Main Camera").GetComponent< SmashCamScript > ();
         timeUnitlCoin = Random.Range (minCoinTime, maxCoinTime);
+		if (badRoom)
+		{
+			int rando = Random.Range (0, coinPositions.Length);
+			GameObject spikeball = Instantiate (Resources.Load ("Prefabs/Spikeball")) as GameObject;
+			spikeball.transform.SetParent (transform);
+			spikeball.transform.localPosition = spikePositions [rando];
+			cover.GetComponent<SpriteRenderer> ().color = Color.red;
+		}
 		if (first) 
 		{
 			GeneralManager.roomPositions.Add (transform.position);
@@ -150,9 +158,15 @@ public class RoomManager : MonoBehaviour {
 
 	void makeNewRoom (Vector2 pos)
 	{
+		int rando = Random.Range (0, 10);
 		GameObject roomy = Instantiate(Resources.Load("Prefabs/Room")) as GameObject; 
 		roomy.transform.position = pos;
 		connectedRooms.Add (roomy.GetComponent<RoomManager>());
+		roomy.GetComponent<RoomManager> ().first = false;
+		if (rando == 5) 
+		{
+			roomy.GetComponent<RoomManager> ().badRoom = true;
+		}
 		GeneralManager.roomPositions.Add (pos);
         Camera.main.GetComponent<CameraMultitarget>().startZoom = Camera.main.GetComponent<CameraMultitarget>().endZoom;
         Camera.main.GetComponent<CameraMultitarget>().StartCoroutine(Camera.main.GetComponent<CameraMultitarget>().ZoomOut()); 
