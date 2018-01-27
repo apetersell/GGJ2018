@@ -10,17 +10,24 @@ public class PlayerController : MonoBehaviour {
 	Rigidbody2D rb;
 	SpriteRenderer sr;
 	public RoomManager rm;
+	Animator anim;
+	bool idle;
+	bool running;
+	bool jumping;
+	bool falling;
 
 	// Use this for initialization
 	void Start () 
 	{
 		rb = GetComponent<Rigidbody2D> ();
 		sr = GetComponent<SpriteRenderer> ();
+		anim = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		animations ();
 		movement ();
 		if (Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown (KeyCode.W)) 
 		{
@@ -65,6 +72,20 @@ public class PlayerController : MonoBehaviour {
 		{
 			rm.scorePoints();
 			Destroy (coll.gameObject);
+		}
+	}
+
+	void animations()
+	{
+		anim.SetBool ("Touching Ground", canJump);
+		anim.SetFloat ("Speed X", rb.velocity.x);
+		anim.SetFloat ("Speed Y", rb.velocity.y);
+		anim.SetBool ("Running", running);
+
+		if (rb.velocity.x != 0 && canJump) {
+			running = true;
+		} else {
+			running = false;
 		}
 	}
 }
