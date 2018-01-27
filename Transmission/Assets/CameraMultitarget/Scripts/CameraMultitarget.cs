@@ -7,7 +7,15 @@ public class CameraMultitarget : MonoBehaviour {
     //Things added for Global Game Jam marked with a *
 
     //*
+
+
+    //Things added for Global Game Jam marked with a *
+
+    //*
     public bool isZooming;
+	public bool start;
+	public float startScore;
+	public float startMax; 
 
 	/// <summary>
 	/// The target objects.
@@ -304,7 +312,11 @@ public class CameraMultitarget : MonoBehaviour {
 
 		if (c.orthographic)
 		{
-            endZoom = boundsSizeSphere + (screenSafeArea / orthographicSafeAreaMulti);
+//			if (!start) {
+				endZoom = boundsSizeSphere + (screenSafeArea / orthographicSafeAreaMulti);
+//			} else {
+//				endZoom = (boundsSizeSphere + (screenSafeArea / orthographicSafeAreaMulti) * (startScore + 1/startMax + 1));
+//			}
             //c.orthographicSize = Mathf.Lerp(startZoom, endZoom, zoomSpeed/duration); 
             //Debug.Log("zoom speed" + zoomSpeed / duration);
 		}
@@ -332,7 +344,7 @@ public class CameraMultitarget : MonoBehaviour {
 		shakeAmount = amount;
 	}
 
-    public IEnumerator ZoomOut ()
+	public IEnumerator ZoomOut ()
     {
         float currentTime = 0;
         do
@@ -343,6 +355,6 @@ public class CameraMultitarget : MonoBehaviour {
         }
         while (currentTime <= duration);
 
-        isZooming = false;
+		isZooming = false;
     }
 }
