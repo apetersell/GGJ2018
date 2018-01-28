@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Player 1
+  m_Name: Player 3
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Touching Ground
@@ -159,13 +159,13 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1102 &1102114099905961096
+--- !u!1102 &1102009232747710500
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: GirlIdle
+  m_Name: IdlePale
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -178,7 +178,32 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e673b38a9f03442f497c9ae9b3ce3642, type: 2}
+  m_Motion: {fileID: 7400000, guid: 3be71e5771b014491a5841f0ac1c7496, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &1102024065649812354
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: FallingPale
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 830e52791f695424e80ca944e2bf8c07, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -209,31 +234,6 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &1102293487195867860
-AnimatorState:
-  serializedVersion: 5
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: GirlRun
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 746240722ffc940a4b905be2219e16d7, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1102 &1102299519434424852
 AnimatorState:
   serializedVersion: 5
@@ -259,13 +259,13 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &1102360832490343030
+--- !u!1102 &1102301761421549112
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: GirlFall
+  m_Name: RunningPale
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -278,7 +278,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 76a95a29d57ab41c6a8b08b66db5cc7a, type: 2}
+  m_Motion: {fileID: 7400000, guid: 92e9e030fe5694ad9877ac7ce2b77ca6, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -303,7 +303,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 101e330151d874eb2bdc23419103e66f, type: 2}
+  m_Motion: {fileID: 7400000, guid: b98dd95eaf9f3460cb0498ba6dd5aa1c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -353,7 +353,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 782514727f9144fdfa8810f1e1c58034, type: 2}
+  m_Motion: {fileID: 7400000, guid: 76a95a29d57ab41c6a8b08b66db5cc7a, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -403,7 +403,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 5e375914c3abd44f482f2cae2bac3ecb, type: 2}
+  m_Motion: {fileID: 7400000, guid: e673b38a9f03442f497c9ae9b3ce3642, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -428,19 +428,19 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 648df5202e54942e9b2cdffe9a308008, type: 2}
+  m_Motion: {fileID: 7400000, guid: 746240722ffc940a4b905be2219e16d7, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &1102781719631993890
+--- !u!1102 &1102732579856460324
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: GirlJump
+  m_Name: JumpPale
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -453,7 +453,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: b98dd95eaf9f3460cb0498ba6dd5aa1c, type: 2}
+  m_Motion: {fileID: 7400000, guid: 654a74200ec9040e0935cbba627fe258, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -520,16 +520,16 @@ AnimatorStateMachine:
     m_State: {fileID: 1102508801393011332}
     m_Position: {x: 416, y: 176, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 1102114099905961096}
+    m_State: {fileID: 1102009232747710500}
     m_Position: {x: 451, y: 241, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 1102293487195867860}
+    m_State: {fileID: 1102732579856460324}
     m_Position: {x: 486, y: 306, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 1102781719631993890}
+    m_State: {fileID: 1102024065649812354}
     m_Position: {x: 521, y: 371, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 1102360832490343030}
+    m_State: {fileID: 1102301761421549112}
     m_Position: {x: 556, y: 436, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:

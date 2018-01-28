@@ -924,7 +924,7 @@ Animator:
   m_GameObject: {fileID: 1749474969401062}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6a7df74411b1c4ea18132dbda18726fb, type: 2}
+  m_Controller: {fileID: 9100000, guid: 386c45249e54d42f3a8f13fb807b3618, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1015,10 +1015,16 @@ MonoBehaviour:
   - {fileID: 9100000, guid: f6ea6265c7041466ca97d4da5627b388, type: 2}
   - {fileID: 9100000, guid: 6a7df74411b1c4ea18132dbda18726fb, type: 2}
   - {fileID: 9100000, guid: bd638d15d877e4825883512a15c822a6, type: 2}
+  - {fileID: 9100000, guid: b11ce38e5f4144ae498d44c0a310063c, type: 2}
+  - {fileID: 9100000, guid: 5d9e5dbc2c07c4656a3e736a0323a25b, type: 2}
+  - {fileID: 9100000, guid: 386c45249e54d42f3a8f13fb807b3618, type: 2}
   sprites:
   - {fileID: 21300000, guid: 13918a0ea564542e8a9480838b685346, type: 3}
   - {fileID: 21300000, guid: 825785e85fd014384b21107a952c8897, type: 3}
   - {fileID: 21300000, guid: abb387b40690e4af7bd3b34bcdc7a992, type: 3}
+  - {fileID: 21300000, guid: f2bb94721d5f74b35871ca95d0547b50, type: 3}
+  - {fileID: 21300000, guid: 3c38f4a760ba2452fb15c283f7647ccd, type: 3}
+  - {fileID: 21300000, guid: 8ac3e08aceb19412babc72c4dfcf0260, type: 3}
 --- !u!198 &198511022139355656
 ParticleSystem:
   m_ObjectHideFlags: 1

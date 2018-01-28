@@ -614,16 +614,6 @@ Prefab:
       propertyPath: m_Name
       value: Room (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 114412818991764972, guid: 0d9223483ca32400b83eb3acbc014bd6,
-        type: 2}
-      propertyPath: claimSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 41f0cbecea86040b18e4e269402a2570, type: 3}
-    - target: {fileID: 114412818991764972, guid: 0d9223483ca32400b83eb3acbc014bd6,
-        type: 2}
-      propertyPath: coinGet
-      value: 
-      objectReference: {fileID: 8300000, guid: 6df9ee10028134911b7f5cad2ba97be7, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d9223483ca32400b83eb3acbc014bd6, type: 2}
   m_IsPrefabParent: 0
@@ -885,6 +875,10 @@ Prefab:
     - target: {fileID: 114412818991764972, guid: 0d9223483ca32400b83eb3acbc014bd6,
         type: 2}
       propertyPath: badRoom
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071021276584160, guid: 0d9223483ca32400b83eb3acbc014bd6, type: 2}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
