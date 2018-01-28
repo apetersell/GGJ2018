@@ -34,11 +34,14 @@ public class RoomManager : MonoBehaviour {
 	public ParticleSystem ps;
     public CrossfadeOnButton cfade;
     public static bool ending;
+	AudioSource auds;
+	public AudioClip claimSound;
 
 
 	// Use this for initialization
 	void Start () 
 	{
+		auds = GameObject.Find ("GeneralManager").GetComponent<AudioSource> ();
 		if (badRoom) 
 		{
 			interior.sprite = badHouseInt;
@@ -94,6 +97,7 @@ public class RoomManager : MonoBehaviour {
                 //if main music isn't playing, switch to main music
                 //cfade.TrackSwitch();
 				completed = true;
+				auds.PlayOneShot (claimSound);
 				foreach (var room in connectedRooms) 
 				{
 					room.activate ();
