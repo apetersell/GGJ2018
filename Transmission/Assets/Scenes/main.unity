@@ -637,8 +637,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointThresholds:
   - 5
-  - 10
   - 15
+  - 30
   - 40
   sprites:
   - {fileID: 21300002, guid: 5689bd9560dd84ae1803a79baaad5c33, type: 3}
