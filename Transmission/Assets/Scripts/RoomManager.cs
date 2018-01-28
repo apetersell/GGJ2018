@@ -41,15 +41,6 @@ public class RoomManager : MonoBehaviour {
 	{
         //sc = GameObject.Find("Main Camera").GetComponent< SmashCamScript > ();
         timeUnitlCoin = Random.Range (minCoinTime, maxCoinTime);
-		if (badRoom)
-		{
-			int rando = Random.Range (0, coinPositions.Length);
-			GameObject spikeball = Instantiate (Resources.Load ("Prefabs/Spikeball")) as GameObject;
-			spikeball.transform.SetParent (transform);
-			spikeball.transform.localPosition = spikePositions [rando];
-			interior.sprite = badHouseInt;
-			exterior.sprite = badHousExt;
-		}
 		if (first) 
 		{
 			GeneralManager.roomPositions.Add (transform.position);
@@ -129,10 +120,22 @@ public class RoomManager : MonoBehaviour {
 
 	public void activate ()
 	{
-        if (!ending){
+        if (!ending)
+		{
             CompassGenerator();
         }
-       
+		if (badRoom) 
+		{
+			if (badRoom)
+			{
+				int rando = Random.Range (0, coinPositions.Length);
+				GameObject spikeball = Instantiate (Resources.Load ("Prefabs/Spikeball")) as GameObject;
+				spikeball.transform.SetParent (transform);
+				spikeball.transform.localPosition = spikePositions [rando];
+				interior.sprite = badHouseInt;
+				exterior.sprite = badHousExt;
+			}
+		}
 		active = true;
         camTarg.enabled = true;
 		for (int i = 0; i < 4; i++) 

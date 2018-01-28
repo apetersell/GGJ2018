@@ -188,8 +188,8 @@ GameObject:
   - component: {fileID: 212777687428433262}
   - component: {fileID: 114828909577615184}
   - component: {fileID: 50706815580866564}
-  - component: {fileID: 61437873644186802}
   - component: {fileID: 95956909853109774}
+  - component: {fileID: 70763878236040108}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -388,7 +388,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1313079498045828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: 14, z: 0}
+  m_LocalPosition: {x: -12, y: 14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4987207337763812}
@@ -775,31 +775,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.44, y: 1.3449321}
   m_EdgeRadius: 0
---- !u!61 &61437873644186802
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1749474969401062}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.02721262, y: -0.05195141}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.2, y: 1.2}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.767457, y: 1.1039028}
-  m_EdgeRadius: 0
 --- !u!61 &61487140503462490
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -925,6 +900,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2881709, y: 1.1162088}
   m_EdgeRadius: 0
+--- !u!70 &70763878236040108
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1749474969401062}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.029844284, y: -0.006663978}
+  m_Size: {x: 0.7651291, y: 1.213328}
+  m_Direction: 0
 --- !u!95 &95956909853109774
 Animator:
   serializedVersion: 3
@@ -973,8 +963,6 @@ MonoBehaviour:
   spikePositions:
   - {x: -4.2, y: -1.6}
   - {x: 4.64, y: -1.6}
-  - {x: -1.62, y: -3.12}
-  - {x: 2.01, y: -3.12}
   circleColors:
   - {r: 0, g: 1, b: 1, a: 1}
   - {r: 0.28676468, g: 0.675355, b: 1, a: 1}
@@ -1019,6 +1007,9 @@ MonoBehaviour:
   jumpSpeed: 30
   canJump: 1
   rm: {fileID: 114412818991764972}
+  hit: 0
+  hitTimerMax: 3
+  colorLerpSpeed: 10
 --- !u!198 &198511022139355656
 ParticleSystem:
   m_ObjectHideFlags: 1
