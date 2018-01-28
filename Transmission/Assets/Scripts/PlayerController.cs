@@ -11,10 +11,8 @@ public class PlayerController : MonoBehaviour {
 	SpriteRenderer sr;
 	public RoomManager rm;
 	Animator anim;
-	bool idle;
 	bool running;
-	bool jumping;
-	bool falling;
+	bool hit;
 
 	// Use this for initialization
 	void Start () 
@@ -72,6 +70,10 @@ public class PlayerController : MonoBehaviour {
 		{
 			rm.scorePoints();
 			Destroy (coll.gameObject);
+		}
+		if (coll.gameObject.tag == "Danger") 
+		{
+
 		}
 	}
 

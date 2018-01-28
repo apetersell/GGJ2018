@@ -63,7 +63,7 @@ public class RoomManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		circleColor (roomScore);
+			
 		if (active) 
 		{
 			currentCoinTimer += Time.deltaTime;
@@ -187,30 +187,6 @@ public class RoomManager : MonoBehaviour {
 
 	void circleColor (float value)
 	{
-		if (value == 1) 
-		{
-			ps.startColor = circleColors [0];
-		}
-
-		if (value == 2) 
-		{
-			ps.startColor = circleColors [1];
-		}
-
-		if (value == 3) 
-		{
-			ps.startColor = circleColors [2];
-		}
-
-		if (value == 4) 
-		{
-			ps.startColor = circleColors [3];
-		}
-
-		if (value == 5) 
-		{
-			ps.startColor = circleColors [4];
-		}
-
+		
 	}
 }

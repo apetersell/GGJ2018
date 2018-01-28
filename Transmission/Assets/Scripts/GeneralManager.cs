@@ -5,15 +5,41 @@ using UnityEngine;
 public class GeneralManager : MonoBehaviour 
 {
 	public static List<Vector2> roomPositions = new List<Vector2> ();
-	public float score;
-	public float health;
+	public static List<PlayerController> players = new List<PlayerController> ();
+	public static float score;
+	public static float health;
+	float maxHealth = 100;
+
+	public string[] compass;
+	public static string direction;
+	public float goalValuePlus;
+	float goalValueMinus;
+	public static float goalDistance;
+
 	// Use this for initialization
-	void Start () {
-		
+	void Start () 
+	{
+		int rando = Random.Range (0, compass.Length);
+		direction = compass [rando];
+		goalValueMinus = goalValuePlus * -1;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update () 
+	{
+		if (direction == "North" || direction == "East") {
+			goalDistance = goalValuePlus;
+		} else {
+			goalDistance = goalValueMinus; 
+		}
+	}
+
+	public static void takeDamage ()
+	{
+		health--;
+		foreach (var guy in players) 
+		{
+//			guy.hit = true;
+		}
 	}
 }
