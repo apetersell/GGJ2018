@@ -33,7 +33,7 @@ public class GeneralManager : MonoBehaviour
 	// Update is called once per frame
 	 void Update () 
 	{ 
-		Debug.Log ("Score");
+		Debug.Log ("Score: " + score);
 		damageMulit = GameObject.Find ("Score").GetComponent<ScoreDisplay> ().damageValue;
 		if (direction == "North" || direction == "East") {
 			goalDistance = goalValuePlus;

@@ -639,7 +639,7 @@ MonoBehaviour:
   - 5
   - 10
   - 15
-  - 20
+  - 40
   sprites:
   - {fileID: 21300002, guid: 5689bd9560dd84ae1803a79baaad5c33, type: 3}
   - {fileID: 21300004, guid: 5689bd9560dd84ae1803a79baaad5c33, type: 3}

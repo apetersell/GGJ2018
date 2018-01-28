@@ -29,26 +29,26 @@ public class ScoreDisplay : MonoBehaviour {
 		if (GeneralManager.score < pointThresholds [1] && GeneralManager.score >= pointThresholds [0])  
 		{
 			display.sprite = sprites [1];
-			damageValue = 2;
+			damageValue = 1;
 		}
 
 		if (GeneralManager.score < pointThresholds [2] && GeneralManager.score >= pointThresholds [1])  
 		{
 			display.sprite = sprites [2];
-			damageValue = 3;
+			damageValue = 2;
 		}
 
 		if (GeneralManager.score < pointThresholds [3] && GeneralManager.score >= pointThresholds [3])  
 		{
 			display.sprite = sprites [3];
             crossFade.TrackSwitch();
-			damageValue = 4;
+			damageValue = 2;
 		}
 
 		if (GeneralManager.score >= pointThresholds [3])  
 		{
 			display.sprite = sprites [4];
-			damageValue = 5;
+			damageValue = 3;
 		}
         //if (Input.GetKeyDown(KeyCode.Space))
         //{
