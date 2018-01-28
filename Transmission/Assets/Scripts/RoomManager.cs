@@ -6,6 +6,7 @@ public class RoomManager : MonoBehaviour {
 
 	public Vector2[] coinPositions;
 	public Vector2[] spikePositions;
+	public Color[] circleColors;
 	public float roomScore;
 	public float roomScoreMax;
 	public float timeUnitlCoin;
@@ -22,15 +23,15 @@ public class RoomManager : MonoBehaviour {
 	public GameObject circle;
 	public float expandedScale;
 	float currentScale;
-	public Color completedColor;
     public CameraMultiTargetObjective camTarg;
 	CameraMultitarget cam; 
 	bool badRoom;
 	public SpriteRenderer interior;
 	public SpriteRenderer exterior;
 	public Sprite badHouseInt;
-	public Sprite badHouseExt;
-
+	public Sprite badHousExt;
+	public Vector3 circleScale;
+	public ParticleSystem ps;
 
 	// Use this for initialization
 	void Start () 
@@ -43,8 +44,8 @@ public class RoomManager : MonoBehaviour {
 			GameObject spikeball = Instantiate (Resources.Load ("Prefabs/Spikeball")) as GameObject;
 			spikeball.transform.SetParent (transform);
 			spikeball.transform.localPosition = spikePositions [rando];
-			exterior.sprite = badHouseExt;
 			interior.sprite = badHouseInt;
+			exterior.sprite = badHousExt;
 		}
 		if (first) 
 		{
@@ -61,10 +62,11 @@ public class RoomManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		circleColor (roomScore);
 		if (active) 
 		{
 			currentCoinTimer += Time.deltaTime;
-			Vector3 circleScale = new Vector3 (currentScale, currentScale, currentScale); 
+			circleScale = new Vector3 (currentScale, currentScale, currentScale); 
 			circle.transform.localScale = circleScale;
 			currentScale = expandedScale * (roomScore / roomScoreMax);
 		}
@@ -88,7 +90,6 @@ public class RoomManager : MonoBehaviour {
 		if (roomScore >=roomScoreMax) 
 		{
 			roomScore = roomScoreMax;
-			circle.GetComponent<SpriteRenderer> ().color = completedColor;
 			if (completed == false) 
 			{
 				completed = true;
@@ -102,7 +103,11 @@ public class RoomManager : MonoBehaviour {
 
 	public void scorePoints ()
 	{
-		roomScore++;
+		if (roomScore < roomScoreMax) 
+		{
+			roomScore++;
+		}
+
 	}
 
 	public void makeCoin()
@@ -175,5 +180,34 @@ public class RoomManager : MonoBehaviour {
 		GeneralManager.roomPositions.Add (pos);
         Camera.main.GetComponent<CameraMultitarget>().startZoom = Camera.main.GetComponent<CameraMultitarget>().endZoom;
         Camera.main.GetComponent<CameraMultitarget>().StartCoroutine(Camera.main.GetComponent<CameraMultitarget>().ZoomOut()); 
+	}
+
+	void circleColor (float value)
+	{
+		if (value == 1) 
+		{
+			ps.startColor = circleColors [0];
+		}
+
+		if (value == 2) 
+		{
+			ps.startColor = circleColors [1];
+		}
+
+		if (value == 3) 
+		{
+			ps.startColor = circleColors [2];
+		}
+
+		if (value == 4) 
+		{
+			ps.startColor = circleColors [3];
+		}
+
+		if (value == 5) 
+		{
+			ps.startColor = circleColors [4];
+		}
+
 	}
 }
