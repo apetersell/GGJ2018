@@ -163,6 +163,7 @@ MonoBehaviour:
   fadeDuration: 1
   nextScene: 1
   fadeInAtStart: 1
+  active: 1
 --- !u!114 &40146998
 MonoBehaviour:
   m_ObjectHideFlags: 0

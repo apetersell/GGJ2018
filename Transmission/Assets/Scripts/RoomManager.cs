@@ -248,6 +248,7 @@ public class RoomManager : MonoBehaviour {
             if (gameObject.transform.position.y > dir && dir > 0)
             {
 				fader.nextScene = 2;
+				fader.active = true;
 				loadEnding ();
             }
         }
@@ -256,6 +257,7 @@ public class RoomManager : MonoBehaviour {
             if (gameObject.transform.position.y < dir && dir < 0)
             {
 				fader.nextScene = 2;
+				fader.active = true;
 				loadEnding ();
             } 
         }
@@ -265,6 +267,7 @@ public class RoomManager : MonoBehaviour {
             if (gameObject.transform.position.x > dir && dir > 0)
             {
 				fader.nextScene = 2;
+				fader.active = true;
 				loadEnding ();
             }
         }
@@ -274,6 +277,7 @@ public class RoomManager : MonoBehaviour {
             if (gameObject.transform.position.x < dir && dir < 0)
             {
 				fader.nextScene = 2;
+				fader.active = true;
 				loadEnding ();
             }
         }

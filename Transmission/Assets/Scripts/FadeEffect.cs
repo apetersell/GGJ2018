@@ -10,6 +10,7 @@ public class FadeEffect : MonoBehaviour {
 	public float fadeDuration;
 	public int nextScene;
 	public bool fadeInAtStart;
+	public bool active;
 	Color displayColor;
 	Image img;
 
@@ -26,7 +27,11 @@ public class FadeEffect : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		img.color = displayColor;
+		if (active) {
+			img.color = displayColor;
+		} else {
+			img.color = Color.clear;
+		}
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			StartCoroutine (fadeOut());
