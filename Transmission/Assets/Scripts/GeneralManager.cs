@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GeneralManager : MonoBehaviour 
 {
@@ -17,6 +18,7 @@ public class GeneralManager : MonoBehaviour
 	public static int spikesInPos0;
 	public static int spikesInPos1;
 	public static float damageMulit;
+	bool ending = false;
 
 	// Use this for initialization
 	void Start () 
@@ -37,6 +39,19 @@ public class GeneralManager : MonoBehaviour
 		} else {
 			goalDistance = goalValueMinus; 
 		} 
+
+		if (score <= 0) 
+		{
+			if (!ending) 
+			{
+				ending = true;
+				FadeEffect fe = GameObject.Find ("Veil").GetComponent<FadeEffect> ();
+				fe.nextScene = 3;
+				fe.active = true;
+				StartCoroutine (fe.fadeOut ());
+			}
+
+		}
 	}
 
 	public static void takeDamage (int sent)
