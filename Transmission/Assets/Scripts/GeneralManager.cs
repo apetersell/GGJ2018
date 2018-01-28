@@ -11,7 +11,7 @@ public class GeneralManager : MonoBehaviour
 
 	public string[] compass;
 	public static string direction;
-	public float goalValuePlus;
+	public float goalValuePlus = 100;
 	float goalValueMinus;
 	public static float goalDistance;
 	public static int spikesInPos0;

@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 173838893}
   - component: {fileID: 173838892}
   - component: {fileID: 173838894}
+  - component: {fileID: 173838895}
   m_Layer: 5
   m_Name: GeneralManager
   m_TagString: Untagged
@@ -179,6 +180,86 @@ MonoBehaviour:
   hitflashDuration: 1
   displayColor: {r: 0.14705884, g: 0.14705884, b: 0.14705884, a: 0}
   neutralBG: {r: 0.14705884, g: 0.14705884, b: 0.14705884, a: 0}
+--- !u!82 &173838895
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 173838891}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!4 &563838138 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4648573703143994, guid: 0d9223483ca32400b83eb3acbc014bd6,
@@ -245,16 +326,6 @@ Prefab:
       propertyPath: m_Name
       value: Room (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 114412818991764972, guid: 0d9223483ca32400b83eb3acbc014bd6,
-        type: 2}
-      propertyPath: cfade
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114412818991764972, guid: 0d9223483ca32400b83eb3acbc014bd6,
-        type: 2}
-      propertyPath: badRoom
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d9223483ca32400b83eb3acbc014bd6, type: 2}
   m_IsPrefabParent: 0
@@ -318,12 +389,22 @@ Prefab:
         type: 2}
       propertyPath: tracks.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 3cf3ac1dfa9a347db9f8199f43f9a9c4, type: 3}
+      objectReference: {fileID: 8300000, guid: bae3cae3cbad847bcbce7c7fc3153998, type: 3}
     - target: {fileID: 114076169784016030, guid: 7cd8529c2802e453f9581a0b24cfb865,
         type: 2}
       propertyPath: tracks.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: be6137f083daa41c0a75cb52f911105b, type: 3}
+      objectReference: {fileID: 8300000, guid: 21f113f8fcc31438a8d9d395c3ac6464, type: 3}
+    - target: {fileID: 82443321622498852, guid: 7cd8529c2802e453f9581a0b24cfb865,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: bae3cae3cbad847bcbce7c7fc3153998, type: 3}
+    - target: {fileID: 82443321622498852, guid: 7cd8529c2802e453f9581a0b24cfb865,
+        type: 2}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7cd8529c2802e453f9581a0b24cfb865, type: 2}
   m_IsPrefabParent: 0
@@ -375,10 +456,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointThresholds:
+  - 1
   - 5
-  - 20
-  - 40
-  - 80
+  - 9
+  - 10
   sprites:
   - {fileID: 21300002, guid: 5689bd9560dd84ae1803a79baaad5c33, type: 3}
   - {fileID: 21300004, guid: 5689bd9560dd84ae1803a79baaad5c33, type: 3}

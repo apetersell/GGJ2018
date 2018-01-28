@@ -390,7 +390,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1313079498045828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12, y: 14, z: 0}
+  m_LocalPosition: {x: 12, y: 14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4987207337763812}
@@ -1187,6 +1187,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f2bb94721d5f74b35871ca95d0547b50, type: 3}
   - {fileID: 21300000, guid: 3c38f4a760ba2452fb15c283f7647ccd, type: 3}
   - {fileID: 21300000, guid: 8ac3e08aceb19412babc72c4dfcf0260, type: 3}
+  sfx:
+  - {fileID: 8300000, guid: 135aac798ae9444afbbc94c763836590, type: 3}
+  - {fileID: 8300000, guid: 6df9ee10028134911b7f5cad2ba97be7, type: 3}
+  - {fileID: 8300000, guid: be6137f083daa41c0a75cb52f911105b, type: 3}
+  playerAud: {fileID: 82658136540786250}
+  hitAud: {fileID: 82298977156803752}
 --- !u!198 &198511022139355656
 ParticleSystem:
   m_ObjectHideFlags: 1
