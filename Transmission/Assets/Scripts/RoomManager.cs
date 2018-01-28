@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; 
 
 public class RoomManager : MonoBehaviour {
 
@@ -36,11 +37,13 @@ public class RoomManager : MonoBehaviour {
     public static bool ending;
 	AudioSource auds;
 	public AudioClip claimSound;
+	FadeEffect fader;
 
 
 	// Use this for initialization
 	void Start () 
 	{
+		fader = GameObject.Find ("Veil").GetComponent<FadeEffect> ();
 		auds = GameObject.Find ("GeneralManager").GetComponent<AudioSource> ();
 		if (badRoom) 
 		{
@@ -64,6 +67,10 @@ public class RoomManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		if (!ending && active) 
+		{
+			CompassGenerator ();
+		}
 		circleColor (roomScore);
 		if (active) 
 		{
@@ -133,11 +140,6 @@ public class RoomManager : MonoBehaviour {
 	public void activate ()
 	{
 		GeneralManager.scorePoints (); 
-
-        if (!ending)
-		{
-            CompassGenerator();
-        }
 		if (badRoom) 
 		{
 			if (badRoom)
@@ -245,16 +247,16 @@ public class RoomManager : MonoBehaviour {
         {
             if (gameObject.transform.position.y > dir && dir > 0)
             {
-                Debug.Log("I WIN CUZ NORTH");
-                ending = true;
+				fader.nextScene = 2;
+				loadEnding ();
             }
         }
         if (GeneralManager.direction == "South")
         {
             if (gameObject.transform.position.y < dir && dir < 0)
             {
-                Debug.Log("I WIN CUZ SOUTH");
-                ending = true;
+				fader.nextScene = 2;
+				loadEnding ();
             } 
         }
 
@@ -262,8 +264,8 @@ public class RoomManager : MonoBehaviour {
         {
             if (gameObject.transform.position.x > dir && dir > 0)
             {
-                Debug.Log("I WIN CUZ EAST");
-                ending = true;
+				fader.nextScene = 2;
+				loadEnding ();
             }
         }
 
@@ -271,12 +273,16 @@ public class RoomManager : MonoBehaviour {
         {
             if (gameObject.transform.position.x < dir && dir < 0)
             {
-                Debug.Log("I WIN CUZ WEST");
-                ending = true;
+				fader.nextScene = 2;
+				loadEnding ();
             }
         }
     }
     //check end goal
     //check your position
-
+	void loadEnding()
+	{
+		StartCoroutine (fader.fadeOut ());
+		ending = true;
+	}
 }
