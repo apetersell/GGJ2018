@@ -14,6 +14,8 @@ public class GeneralManager : MonoBehaviour
 	public float goalValuePlus;
 	float goalValueMinus;
 	public static float goalDistance;
+	public static int spikesInPos0;
+	public static int spikesInPos1;
 
 	// Use this for initialization
 	void Start () 
@@ -35,9 +37,18 @@ public class GeneralManager : MonoBehaviour
 		}
 	}
 
-	public static void takeDamage ()
+	public static void takeDamage (int sent)
 	{
-		score--;
+		if (sent == 0) 
+		{
+			score -= spikesInPos0;
+			Debug.Log ("HIT 0:" + spikesInPos0 + "damage.");
+		}
+		if (sent == 1) 
+		{
+			score -= spikesInPos1; 
+			Debug.Log ("HIT 1:" + spikesInPos1 + "damage.");
+		}
 		foreach (var guy in players) 
 		{
 			guy.hit = true;
@@ -46,5 +57,17 @@ public class GeneralManager : MonoBehaviour
 	public static void scorePoints()
 	{
 		score++;
+	}
+
+	public static void updateSpikeVals (int sent)
+	{
+		if (sent == 0) {
+			spikesInPos0++;
+		} else {
+			spikesInPos1++;
+		}
+
+		Debug.Log ("Spikes 0: " + spikesInPos0);
+		Debug.Log ("Spikes 1: " + spikesInPos1);
 	}
 }

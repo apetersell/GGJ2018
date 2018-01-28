@@ -959,10 +959,9 @@ MonoBehaviour:
   - {x: -2.62, y: -1.66}
   - {x: 3.13, y: -1.66}
   - {x: 0.16, y: 0.48}
-  - {x: 0.16, y: 0.53}
   spikePositions:
-  - {x: -4.2, y: -1.6}
-  - {x: 4.64, y: -1.6}
+  - {x: -4, y: -1.37}
+  - {x: 4.33, y: -1.37}
   circleColors:
   - {r: 0, g: 1, b: 1, a: 1}
   - {r: 0.28676468, g: 0.675355, b: 1, a: 1}
@@ -985,6 +984,7 @@ MonoBehaviour:
   circle: {fileID: 1104176360663424}
   expandedScale: 5
   camTarg: {fileID: 114344343386994000}
+  badRoom: 0
   interior: {fileID: 212458782321044294}
   exterior: {fileID: 212658991940233610}
   badHouseInt: {fileID: 21300000, guid: 4f206449c5760496685a1b307c93d323, type: 3}

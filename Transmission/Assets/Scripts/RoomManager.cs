@@ -25,7 +25,7 @@ public class RoomManager : MonoBehaviour {
 	float currentScale;
     public CameraMultiTargetObjective camTarg;
 	CameraMultitarget cam; 
-	bool badRoom;
+	public bool badRoom;
 	public SpriteRenderer interior;
 	public SpriteRenderer exterior;
 	public Sprite badHouseInt;
@@ -134,6 +134,8 @@ public class RoomManager : MonoBehaviour {
 				GameObject spikeball = Instantiate (Resources.Load ("Prefabs/Spikeball")) as GameObject;
 				spikeball.transform.SetParent (transform);
 				spikeball.transform.localPosition = spikePositions [rando];
+				spikeball.GetComponent<Spikes> ().pos = rando;
+				GeneralManager.updateSpikeVals (rando);
 				interior.sprite = badHouseInt;
 				exterior.sprite = badHousExt;
 			}
@@ -182,7 +184,7 @@ public class RoomManager : MonoBehaviour {
 
 	void makeNewRoom (Vector2 pos)
 	{
-		int rando = Random.Range (0, 10);
+		int rando = Random.Range (0, 6);
 		GameObject roomy = Instantiate(Resources.Load("Prefabs/Room")) as GameObject; 
 		roomy.transform.position = pos;
 		connectedRooms.Add (roomy.GetComponent<RoomManager>());

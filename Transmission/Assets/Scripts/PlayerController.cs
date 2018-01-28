@@ -94,8 +94,8 @@ public class PlayerController : MonoBehaviour {
 		{
 			if (!hit) 
 			{
-				GeneralManager.takeDamage ();
-				Debug.Log (GeneralManager.score);
+				int whichSpike = coll.GetComponent<Spikes> ().pos;
+				GeneralManager.takeDamage (whichSpike);
 			}
 		}
 	}
