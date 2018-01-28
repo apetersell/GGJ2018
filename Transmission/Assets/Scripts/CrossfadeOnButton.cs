@@ -5,23 +5,20 @@ public class CrossfadeOnButton : MonoBehaviour
 {
     public AudioClip[] tracks;
 
-    public KeyCode space = KeyCode.Space;
+    //public KeyCode space = KeyCode.Space;
     public float fadeTime = 1.0f;
 
     private int currentTrack = 0;
 
 
-    // Update is called once per frame
-    void Update()
+    //hook this function into whatever script you need to crossfade with
+    public void TrackSwitch ()
     {
-        if (Input.GetKeyDown(space))
+        currentTrack++;
+        if (currentTrack >= tracks.Length)
         {
-            currentTrack++;
-            if (currentTrack >= tracks.Length)
-            {
-                currentTrack = 0;
-            }
-            AudioManager.Crossfade(tracks[currentTrack], fadeTime);
+            currentTrack = 0;
         }
+        AudioManager.Crossfade(tracks[currentTrack], fadeTime);
     }
 }

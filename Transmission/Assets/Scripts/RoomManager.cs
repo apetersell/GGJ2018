@@ -32,6 +32,7 @@ public class RoomManager : MonoBehaviour {
 	public Sprite badHousExt;
 	public Vector3 circleScale;
 	public ParticleSystem ps;
+    public CrossfadeOnButton cfade;
 
 	// Use this for initialization
 	void Start () 
@@ -92,6 +93,8 @@ public class RoomManager : MonoBehaviour {
 			roomScore = roomScoreMax;
 			if (completed == false) 
 			{
+                //if main music isn't playing, switch to main music
+                cfade.TrackSwitch();
 				completed = true;
 				foreach (var room in connectedRooms) 
 				{
