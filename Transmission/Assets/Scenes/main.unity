@@ -1277,7 +1277,8 @@ Prefab:
         type: 2}
       propertyPath: cfade
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 114076169784016030, guid: 7cd8529c2802e453f9581a0b24cfb865,
+        type: 2}
     - target: {fileID: 82658136540786250, guid: 0d9223483ca32400b83eb3acbc014bd6,
         type: 2}
       propertyPath: m_Volume
