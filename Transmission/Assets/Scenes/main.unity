@@ -428,9 +428,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointThresholds:
   - 5
-  - 10
-  - 15
   - 20
+  - 40
+  - 80
   sprites:
   - {fileID: 21300002, guid: e1414167b12394daaa96312eeb149769, type: 3}
   - {fileID: 21300004, guid: e1414167b12394daaa96312eeb149769, type: 3}
@@ -894,25 +894,6 @@ Prefab:
       propertyPath: cfade
       value: 
       objectReference: {fileID: 936054522}
-    - target: {fileID: 114828909577615184, guid: 0d9223483ca32400b83eb3acbc014bd6,
-        type: 2}
-      propertyPath: colorLerpSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1071021276584160, guid: 0d9223483ca32400b83eb3acbc014bd6, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 95956909853109774, guid: 0d9223483ca32400b83eb3acbc014bd6,
-        type: 2}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 6a7df74411b1c4ea18132dbda18726fb, type: 2}
-    - target: {fileID: 114412818991764972, guid: 0d9223483ca32400b83eb3acbc014bd6,
-        type: 2}
-      propertyPath: badRoom
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d9223483ca32400b83eb3acbc014bd6, type: 2}
   m_IsPrefabParent: 0
