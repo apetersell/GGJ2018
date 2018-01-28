@@ -99,6 +99,7 @@ public class PlayerController : MonoBehaviour {
 		{
 			if (!hit) 
 			{
+				StartCoroutine(GameObject.Find ("GeneralManager").GetComponent<ScreenFlash> ().screenFlash ());
 				int whichSpike = coll.GetComponent<Spikes> ().pos;
 				GeneralManager.takeDamage (whichSpike);
 			}
