@@ -120,6 +120,8 @@ public class RoomManager : MonoBehaviour {
 
 	public void activate ()
 	{
+		GeneralManager.scorePoints (); 
+
         if (!ending)
 		{
             CompassGenerator();
@@ -128,7 +130,7 @@ public class RoomManager : MonoBehaviour {
 		{
 			if (badRoom)
 			{
-				int rando = Random.Range (0, coinPositions.Length);
+				int rando = Random.Range (0, spikePositions.Length);
 				GameObject spikeball = Instantiate (Resources.Load ("Prefabs/Spikeball")) as GameObject;
 				spikeball.transform.SetParent (transform);
 				spikeball.transform.localPosition = spikePositions [rando];

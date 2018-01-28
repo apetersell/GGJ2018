@@ -43,4 +43,8 @@ public class GeneralManager : MonoBehaviour
 			guy.hit = true;
 		}
 	}
+	public static void scorePoints()
+	{
+		score++;
+	}
 }
