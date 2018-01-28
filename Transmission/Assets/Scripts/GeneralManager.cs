@@ -7,7 +7,6 @@ public class GeneralManager : MonoBehaviour
 	public static List<Vector2> roomPositions = new List<Vector2> ();
 	public static List<PlayerController> players = new List<PlayerController> ();
 	public static float score;
-	public static float health;
 	float maxHealth = 100;
 
 	public string[] compass;
@@ -19,6 +18,7 @@ public class GeneralManager : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		score = 1;
 		int rando = Random.Range (0, compass.Length);
 		direction = compass [rando];
         Debug.Log(direction);
@@ -37,10 +37,10 @@ public class GeneralManager : MonoBehaviour
 
 	public static void takeDamage ()
 	{
-		health--;
+		score--;
 		foreach (var guy in players) 
 		{
-//			guy.hit = true;
+			guy.hit = true;
 		}
 	}
 }

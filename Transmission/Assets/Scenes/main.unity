@@ -787,6 +787,16 @@ Prefab:
       propertyPath: circleColors.Array.data[3].b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114828909577615184, guid: 0d9223483ca32400b83eb3acbc014bd6,
+        type: 2}
+      propertyPath: colorLerpSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114828909577615184, guid: 0d9223483ca32400b83eb3acbc014bd6,
+        type: 2}
+      propertyPath: hitTimerMax
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d9223483ca32400b83eb3acbc014bd6, type: 2}
   m_IsPrefabParent: 0

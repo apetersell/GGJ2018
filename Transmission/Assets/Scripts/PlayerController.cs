@@ -12,7 +12,11 @@ public class PlayerController : MonoBehaviour {
 	public RoomManager rm;
 	Animator anim;
 	bool running;
-	bool hit;
+	public bool hit;
+	public float hitTimerMax;
+	float hitTimer;
+	Color flashing;
+	public float colorLerpSpeed;
 
 	// Use this for initialization
 	void Start () 
@@ -20,11 +24,13 @@ public class PlayerController : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D> ();
 		sr = GetComponent<SpriteRenderer> ();
 		anim = GetComponent<Animator> ();
+		GeneralManager.players.Add (this);
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		flashing = Color.Lerp(Color.white, Color.red, Mathf.PingPong(Time.time*colorLerpSpeed, 1));
 		animations ();
 		movement ();
 		if (Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown (KeyCode.W)) 
@@ -33,6 +39,19 @@ public class PlayerController : MonoBehaviour {
 			{
 				jump ();
 			}
+		}
+
+		if (hit) {
+			hitTimer += Time.deltaTime;
+			sr.color = flashing;
+		} else {
+			sr.color = Color.white;
+		}
+
+		if (hitTimer >= hitTimerMax) 
+		{
+			hit = false;
+			hitTimer = 0;
 		}
 	}
 
@@ -73,7 +92,11 @@ public class PlayerController : MonoBehaviour {
 		}
 		if (coll.gameObject.tag == "Danger") 
 		{
-
+			if (!hit) 
+			{
+				GeneralManager.takeDamage ();
+				Debug.Log (GeneralManager.score);
+			}
 		}
 	}
 
