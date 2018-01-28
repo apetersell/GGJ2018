@@ -5,17 +5,44 @@ using UnityEngine.UI;
 
 public class ScoreDisplay : MonoBehaviour {
 
-	Text display;
+	Image display;
+	public float [] pointThresholds;
+	public Sprite [] sprites;
 
 	// Use this for initialization
 	void Start () 
 	{
-		display = GetComponent<Text> ();
+		display = GetComponent<Image> ();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		display.text = GeneralManager.score.ToString();
+		if (GeneralManager.score < pointThresholds [0]) 
+		{
+			display.sprite = sprites [0];
+		}
+
+		if (GeneralManager.score < pointThresholds [1] && GeneralManager.score >= pointThresholds [0])  
+		{
+			display.sprite = sprites [1];
+		}
+
+		if (GeneralManager.score < pointThresholds [2] && GeneralManager.score >= pointThresholds [1])  
+		{
+			display.sprite = sprites [2];
+		}
+
+		if (GeneralManager.score < pointThresholds [3] && GeneralManager.score >= pointThresholds [3])  
+		{
+			display.sprite = sprites [3];
+		}
+
+		if (GeneralManager.score >= pointThresholds [3])  
+		{
+			display.sprite = sprites [4];
+		}
 	}
+
+
 }

@@ -984,7 +984,7 @@ MonoBehaviour:
   circle: {fileID: 1104176360663424}
   expandedScale: 5
   camTarg: {fileID: 114344343386994000}
-  badRoom: 1
+  badRoom: 0
   interior: {fileID: 212458782321044294}
   exterior: {fileID: 212658991940233610}
   badHouseInt: {fileID: 21300000, guid: 4f206449c5760496685a1b307c93d323, type: 3}
