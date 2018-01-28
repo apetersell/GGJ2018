@@ -39,6 +39,11 @@ public class RoomManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		if (badRoom) 
+		{
+			interior.sprite = badHouseInt;
+			exterior.sprite = badHousExt;
+		}
         //sc = GameObject.Find("Main Camera").GetComponent< SmashCamScript > ();
         timeUnitlCoin = Random.Range (minCoinTime, maxCoinTime);
 		if (first) 
@@ -108,14 +113,17 @@ public class RoomManager : MonoBehaviour {
 
 	public void makeCoin()
 	{
-		currentCoinTimer = 0;
-		GameObject c = Instantiate (Resources.Load ("Prefabs/Coin")) as GameObject;
-		int rando = Random.Range (0, coinPositions.Length);
-		coin = c;
-		c.transform.SetParent (transform);
-		c.transform.localPosition = coinPositions [rando];
-		float newCoinTime = Random.Range (minCoinTime, maxCoinTime);
-		timeUnitlCoin = newCoinTime;
+		if (roomScore < roomScoreMax) 
+		{
+			currentCoinTimer = 0;
+			GameObject c = Instantiate (Resources.Load ("Prefabs/Coin")) as GameObject;
+			int rando = Random.Range (0, coinPositions.Length);
+			coin = c;
+			c.transform.SetParent (transform);
+			c.transform.localPosition = coinPositions [rando];
+			float newCoinTime = Random.Range (minCoinTime, maxCoinTime);
+			timeUnitlCoin = newCoinTime;
+		}
 	}
 
 	public void activate ()
@@ -136,8 +144,6 @@ public class RoomManager : MonoBehaviour {
 				spikeball.transform.localPosition = spikePositions [rando];
 				spikeball.GetComponent<Spikes> ().pos = rando;
 				GeneralManager.updateSpikeVals (rando);
-				interior.sprite = badHouseInt;
-				exterior.sprite = badHousExt;
 			}
 		}
 		active = true;

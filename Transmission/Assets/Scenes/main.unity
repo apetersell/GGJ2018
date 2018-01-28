@@ -250,7 +250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cac9a7c96d4984a399f7939084f046cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  display: {fileID: 0}
 --- !u!114 &572248356 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114412818991764972, guid: 0d9223483ca32400b83eb3acbc014bd6,
@@ -776,6 +775,15 @@ Prefab:
       propertyPath: badRoom
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1071021276584160, guid: 0d9223483ca32400b83eb3acbc014bd6, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 95956909853109774, guid: 0d9223483ca32400b83eb3acbc014bd6,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: bd638d15d877e4825883512a15c822a6, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d9223483ca32400b83eb3acbc014bd6, type: 2}
   m_IsPrefabParent: 0
@@ -894,6 +902,15 @@ Prefab:
       propertyPath: colorLerpSpeed
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1071021276584160, guid: 0d9223483ca32400b83eb3acbc014bd6, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 95956909853109774, guid: 0d9223483ca32400b83eb3acbc014bd6,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6a7df74411b1c4ea18132dbda18726fb, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d9223483ca32400b83eb3acbc014bd6, type: 2}
   m_IsPrefabParent: 0

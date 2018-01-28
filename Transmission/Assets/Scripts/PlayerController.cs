@@ -17,14 +17,19 @@ public class PlayerController : MonoBehaviour {
 	float hitTimer;
 	Color flashing;
 	public float colorLerpSpeed;
+	public RuntimeAnimatorController[] controllers;
+	public Sprite[] sprites;
 
 	// Use this for initialization
 	void Start () 
 	{
+		int rando = Random.Range (0, sprites.Length);
 		rb = GetComponent<Rigidbody2D> ();
 		sr = GetComponent<SpriteRenderer> ();
 		anim = GetComponent<Animator> ();
 		GeneralManager.players.Add (this);
+		sr.sprite = sprites [rando];
+		anim.runtimeAnimatorController = controllers [rando];
 	}
 	
 	// Update is called once per frame

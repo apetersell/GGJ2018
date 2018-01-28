@@ -43,7 +43,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1104176360663424
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,7 +388,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1313079498045828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12, y: 14, z: 0}
+  m_LocalPosition: {x: 12, y: -10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4987207337763812}
@@ -924,7 +924,7 @@ Animator:
   m_GameObject: {fileID: 1749474969401062}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f6ea6265c7041466ca97d4da5627b388, type: 2}
+  m_Controller: {fileID: 9100000, guid: bd638d15d877e4825883512a15c822a6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -984,7 +984,7 @@ MonoBehaviour:
   circle: {fileID: 1104176360663424}
   expandedScale: 5
   camTarg: {fileID: 114344343386994000}
-  badRoom: 0
+  badRoom: 1
   interior: {fileID: 212458782321044294}
   exterior: {fileID: 212658991940233610}
   badHouseInt: {fileID: 21300000, guid: 4f206449c5760496685a1b307c93d323, type: 3}
@@ -1010,6 +1010,14 @@ MonoBehaviour:
   hit: 0
   hitTimerMax: 3
   colorLerpSpeed: 10
+  controllers:
+  - {fileID: 9100000, guid: f6ea6265c7041466ca97d4da5627b388, type: 2}
+  - {fileID: 9100000, guid: 6a7df74411b1c4ea18132dbda18726fb, type: 2}
+  - {fileID: 9100000, guid: bd638d15d877e4825883512a15c822a6, type: 2}
+  sprites:
+  - {fileID: 21300000, guid: 13918a0ea564542e8a9480838b685346, type: 3}
+  - {fileID: 21300000, guid: 825785e85fd014384b21107a952c8897, type: 3}
+  - {fileID: 21300000, guid: abb387b40690e4af7bd3b34bcdc7a992, type: 3}
 --- !u!198 &198511022139355656
 ParticleSystem:
   m_ObjectHideFlags: 1
