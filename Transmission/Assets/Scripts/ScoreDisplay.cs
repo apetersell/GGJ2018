@@ -8,6 +8,7 @@ public class ScoreDisplay : MonoBehaviour {
 	Image display;
 	public float [] pointThresholds;
 	public Sprite [] sprites;
+    public CrossfadeOnButton crossFade;
 
 	// Use this for initialization
 	void Start () 
@@ -36,12 +37,18 @@ public class ScoreDisplay : MonoBehaviour {
 		if (GeneralManager.score < pointThresholds [3] && GeneralManager.score >= pointThresholds [3])  
 		{
 			display.sprite = sprites [3];
+            crossFade.TrackSwitch();
 		}
 
 		if (GeneralManager.score >= pointThresholds [3])  
 		{
 			display.sprite = sprites [4];
 		}
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    crossFade.TrackSwitch();
+                     
+        //}
 	}
 
 

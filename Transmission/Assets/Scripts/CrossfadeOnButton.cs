@@ -19,6 +19,6 @@ public class CrossfadeOnButton : MonoBehaviour
         {
             currentTrack = 0;
         }
-        //AudioManager.Crossfade(tracks[currentTrack], fadeTime);
+        AudioManager.Crossfade(tracks[currentTrack], fadeTime);
     }
 }

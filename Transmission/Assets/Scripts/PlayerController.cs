@@ -19,6 +19,10 @@ public class PlayerController : MonoBehaviour {
 	public float colorLerpSpeed;
 	public RuntimeAnimatorController[] controllers;
 	public Sprite[] sprites;
+    public AudioClip[] sfx;
+    public AudioSource playerAud;
+    public AudioSource hitAud;
+
 
 	// Use this for initialization
 	void Start () 
@@ -42,6 +46,7 @@ public class PlayerController : MonoBehaviour {
 		{
 			if (canJump) 
 			{
+                playerAud.PlayOneShot(sfx[0]);
 				jump ();
 			}
 		}
@@ -92,6 +97,7 @@ public class PlayerController : MonoBehaviour {
 	{
 		if (coll.gameObject.tag == "Coin") 
 		{
+            hitAud.PlayOneShot(sfx[1]);
 			rm.scorePoints();
 			Destroy (coll.gameObject);
 		}
@@ -99,6 +105,7 @@ public class PlayerController : MonoBehaviour {
 		{
 			if (!hit) 
 			{
+                hitAud.PlayOneShot(sfx[2]);
 				StartCoroutine(GameObject.Find ("GeneralManager").GetComponent<ScreenFlash> ().screenFlash ());
 				int whichSpike = coll.GetComponent<Spikes> ().pos;
 				GeneralManager.takeDamage (whichSpike);
