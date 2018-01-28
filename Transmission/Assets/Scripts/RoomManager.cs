@@ -40,6 +40,11 @@ public class RoomManager : MonoBehaviour {
 	FadeEffect fader;
 
 
+	void Awake ()
+	{
+		ending = false;
+	}
+
 	// Use this for initialization
 	void Start () 
 	{

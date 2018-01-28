@@ -20,9 +20,24 @@ public class GeneralManager : MonoBehaviour
 	public static float damageMulit;
 	bool ending = false;
 
+	void Awake ()
+	{
+		roomPositions.Clear ();
+		players.Clear ();
+		score = 1;
+		spikesInPos0 = 0;
+		spikesInPos1 = 0;
+		damageMulit = 1;
+		ending = false;
+	}
+
 	// Use this for initialization
 	void Start () 
 	{
+		Debug.Log ("Score " + score);
+		Debug.Log ("Spikes1 " + spikesInPos1);
+		Debug.Log ("Spikes2 " + spikesInPos1);
+		Debug.Log ("damageMulti" + damageMulit);
 		score = 1;
 		int rando = Random.Range (0, compass.Length);
 		direction = compass [rando];
@@ -51,7 +66,6 @@ public class GeneralManager : MonoBehaviour
 				fe.active = true;
 				StartCoroutine (fe.fadeOut ());
 			}
-
 		}
 	}
 
@@ -82,6 +96,14 @@ public class GeneralManager : MonoBehaviour
 		} else {
 			spikesInPos1++;
 		}
+	}
+
+	public static void reset ()
+	{
+		score = 0;
+		roomPositions.Clear ();
+		players.Clear ();
+		SceneManager.LoadScene (0);
 	}
 
 
