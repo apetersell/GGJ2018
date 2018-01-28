@@ -1153,7 +1153,7 @@ MonoBehaviour:
   badHousExt: {fileID: 21300002, guid: 4f206449c5760496685a1b307c93d323, type: 3}
   circleScale: {x: 0, y: 0, z: 0}
   ps: {fileID: 198511022139355656}
-  cfade: {fileID: 0}
+  cfade: {fileID: 114076169784016030, guid: 7cd8529c2802e453f9581a0b24cfb865, type: 2}
   claimSound: {fileID: 8300000, guid: 41f0cbecea86040b18e4e269402a2570, type: 3}
 --- !u!114 &114828909577615184
 MonoBehaviour:
