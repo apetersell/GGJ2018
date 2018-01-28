@@ -34,7 +34,7 @@ public class GeneralManager : MonoBehaviour
 			goalDistance = goalValuePlus;
 		} else {
 			goalDistance = goalValueMinus; 
-		}
+		} 
 	}
 
 	public static void takeDamage (int sent)
@@ -70,4 +70,6 @@ public class GeneralManager : MonoBehaviour
 		Debug.Log ("Spikes 0: " + spikesInPos0);
 		Debug.Log ("Spikes 1: " + spikesInPos1);
 	}
+
+
 }
