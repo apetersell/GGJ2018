@@ -33,6 +33,8 @@ public class RoomManager : MonoBehaviour {
 	public Vector3 circleScale;
 	public ParticleSystem ps;
     public CrossfadeOnButton cfade;
+    public static bool ending;
+
 
 	// Use this for initialization
 	void Start () 
@@ -63,7 +65,7 @@ public class RoomManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-			
+		circleColor (roomScore);
 		if (active) 
 		{
 			currentCoinTimer += Time.deltaTime;
@@ -94,7 +96,7 @@ public class RoomManager : MonoBehaviour {
 			if (completed == false) 
 			{
                 //if main music isn't playing, switch to main music
-                cfade.TrackSwitch();
+                //cfade.TrackSwitch();
 				completed = true;
 				foreach (var room in connectedRooms) 
 				{
@@ -127,6 +129,10 @@ public class RoomManager : MonoBehaviour {
 
 	public void activate ()
 	{
+        if (!ending){
+            CompassGenerator();
+        }
+       
 		active = true;
         camTarg.enabled = true;
 		for (int i = 0; i < 4; i++) 
@@ -187,6 +193,73 @@ public class RoomManager : MonoBehaviour {
 
 	void circleColor (float value)
 	{
-		
+		if (value == 1) 
+		{
+			ps.startColor = circleColors [0];
+		}
+
+		if (value == 2) 
+		{
+			ps.startColor = circleColors [1];
+		}
+
+		if (value == 3) 
+		{
+			ps.startColor = circleColors [2];
+		}
+
+		if (value == 4) 
+		{
+			ps.startColor = circleColors [3];
+		}
+
+		if (value == 5) 
+		{
+			ps.startColor = circleColors [4];
+		}
+
 	}
+
+    public void CompassGenerator ()
+    {
+        float dir = GeneralManager.goalDistance;
+
+        if (GeneralManager.direction == "North")
+        {
+            if (gameObject.transform.position.y > dir && dir > 0)
+            {
+                Debug.Log("I WIN CUZ NORTH");
+                ending = true;
+            }
+        }
+        if (GeneralManager.direction == "South")
+        {
+            if (gameObject.transform.position.y < dir && dir < 0)
+            {
+                Debug.Log("I WIN CUZ SOUTH");
+                ending = true;
+            } 
+        }
+
+        if (GeneralManager.direction == "East")
+        {
+            if (gameObject.transform.position.x > dir && dir > 0)
+            {
+                Debug.Log("I WIN CUZ EAST");
+                ending = true;
+            }
+        }
+
+        if (GeneralManager.direction == "West")
+        {
+            if (gameObject.transform.position.x < dir && dir < 0)
+            {
+                Debug.Log("I WIN CUZ WEST");
+                ending = true;
+            }
+        }
+    }
+    //check end goal
+    //check your position
+
 }
