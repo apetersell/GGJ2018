@@ -21,7 +21,8 @@ public class GeneralManager : MonoBehaviour
 	{
 		int rando = Random.Range (0, compass.Length);
 		direction = compass [rando];
-		goalValueMinus = goalValuePlus * -1;
+        Debug.Log(direction);
+		goalValueMinus = -goalValuePlus;
 	}
 	
 	// Update is called once per frame
