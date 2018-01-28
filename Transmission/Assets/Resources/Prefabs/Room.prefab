@@ -992,6 +992,7 @@ MonoBehaviour:
   circleScale: {x: 0, y: 0, z: 0}
   ps: {fileID: 198511022139355656}
   cfade: {fileID: 0}
+  claimSound: {fileID: 8300000, guid: 41f0cbecea86040b18e4e269402a2570, type: 3}
 --- !u!114 &114828909577615184
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1018,8 +1019,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 13918a0ea564542e8a9480838b685346, type: 3}
   - {fileID: 21300000, guid: 825785e85fd014384b21107a952c8897, type: 3}
   - {fileID: 21300000, guid: abb387b40690e4af7bd3b34bcdc7a992, type: 3}
-  hitflashDuration: 3
-  neutralBG: {r: 0.14705884, g: 0.14705884, b: 0.14705884, a: 0}
 --- !u!198 &198511022139355656
 ParticleSystem:
   m_ObjectHideFlags: 1
